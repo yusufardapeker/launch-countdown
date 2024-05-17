@@ -1,0 +1,103 @@
+body {
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  background: url("../images/bg-stars.svg") no-repeat, hsl(235, 16%, 14%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.hills-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  margin-bottom: 96px;
+}
+
+.countdown-wrapper {
+  display: flex;
+  gap: 32px;
+}
+.countdown-wrapper .countdown-item {
+  text-align: center;
+  margin-bottom: 132px;
+}
+.countdown-wrapper .countdown-item-background {
+  background-color: hsl(236, 21%, 26%);
+  padding: 28px;
+  width: 180px;
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.countdown-wrapper .countdown-item-background-half {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsl(236, 21%, 26%);
+  border-radius: 8px 8px 0 0;
+  opacity: 0.3;
+}
+.countdown-wrapper .countdown-item-background::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: hsl(234, 17%, 12%);
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  left: -12px;
+}
+.countdown-wrapper .countdown-item-background::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: hsl(234, 17%, 12%);
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  right: -12px;
+}
+.countdown-wrapper .countdown-item-background .countdown-number {
+  color: hsl(345, 95%, 68%);
+  font-size: 96px;
+}
+.countdown-wrapper .countdown-item .countdown-time-type {
+  color: hsl(237, 18%, 59%);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  left: 50%;
+  top: 88%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.social-media svg {
+  transform: scale(1.2);
+}
+.social-media svg:hover path {
+  fill: hsl(345, 95%, 68%);
+}/*# sourceMappingURL=style.css.map */

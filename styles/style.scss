@@ -1,0 +1,118 @@
+// Colors
+$grayish-blue: hsl(237, 18%, 59%);
+$soft-red: hsl(345, 95%, 68%);
+
+$white: hsl(0, 0%, 100%);
+$dark-desaturated-blue: hsl(236, 21%, 26%);
+$very-dark-blue: hsl(235, 16%, 14%);
+$very-very-dark-blue: hsl(234, 17%, 12%);
+
+body {
+	font-size: 14px;
+	font-family: "Red Hat Text", sans-serif;
+	font-weight: 700;
+	background: url("../images/bg-stars.svg") no-repeat, $very-dark-blue;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.hills-bg {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+h1 {
+	color: $white;
+	font-size: 36px;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+	margin-bottom: 96px;
+}
+
+.countdown-wrapper {
+	display: flex;
+	gap: 32px;
+
+	.countdown-item {
+		text-align: center;
+		margin-bottom: 132px;
+
+		&-background {
+			background-color: $dark-desaturated-blue;
+			padding: 28px;
+			width: 180px;
+			position: relative;
+			margin-bottom: 24px;
+			border-radius: 8px;
+			overflow: hidden;
+
+			&-half {
+				position: absolute;
+				height: 50%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background-color: $dark-desaturated-blue;
+				border-radius: 8px 8px 0 0;
+				opacity: 0.3;
+			}
+
+			@mixin pseudoElements {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: $very-very-dark-blue;
+				padding: 10px;
+				border-radius: 50%;
+				z-index: 1;
+			}
+
+			&::before {
+				@include pseudoElements;
+				left: -12px;
+			}
+
+			&::after {
+				@include pseudoElements;
+				right: -12px;
+			}
+
+			.countdown-number {
+				color: $soft-red;
+				font-size: 96px;
+			}
+		}
+
+		.countdown-time-type {
+			color: $grayish-blue;
+			font-size: 18px;
+			text-transform: uppercase;
+			letter-spacing: 8px;
+			text-align: center;
+		}
+	}
+}
+
+.social-media {
+	display: flex;
+	gap: 40px;
+	position: absolute;
+	left: 50%;
+	top: 88%;
+	transform: translateX(-50%);
+	cursor: pointer;
+
+	svg {
+		transform: scale(1.2);
+
+		&:hover path {
+			fill: $soft-red;
+		}
+	}
+}
